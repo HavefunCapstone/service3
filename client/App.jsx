@@ -20,7 +20,7 @@ import PostReview from "./PostReview.jsx";
 function App() {
     const [data, setData] = useState([]);
     const [characteristics, setCharacteristics] = useState([])
-    const [product_id, setId] = useState(11005);
+    const [product_id, setId] = useState(11050);
     const [rating, setRating] = useState(null)
     const [newest, setNew] = useState(false)
     const [helpful, setHelp] = useState(false)
