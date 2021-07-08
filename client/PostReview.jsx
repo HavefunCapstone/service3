@@ -185,7 +185,7 @@ const PostReview = (props) => {
                 comfort: comfort
             }
         }
-        axios.post(`/reviews`, object)
+        axios.post(`/api/reviews`, object)
             .then(result => {
                 console.log(result)
                 Swal.fire(

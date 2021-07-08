@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 
-app.get('/reviews/meta/:product_id', (req, res) => {
+app.get('/api/reviews/meta/:product_id', (req, res) => {
   let id = req.params.product_id
   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/meta/`, {
     headers: {
@@ -37,7 +37,7 @@ app.get('/reviews/meta/:product_id', (req, res) => {
 
 });
 // get request with sort 
-app.get('/reviews/:product_id/:sort', (req, res) => {
+app.get('/api/reviews/:product_id/:sort', (req, res) => {
   let id = req.params.product_id
   let sort = req.params.sort
   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/`, {
@@ -58,7 +58,7 @@ app.get('/reviews/:product_id/:sort', (req, res) => {
 
 });
 
-app.post(`/reviews`, (req, res) => {
+app.post(`/api/reviews`, (req, res) => {
   let data = req.body
 
   console.log(data, "hehehehehehehhegfhfhch")
@@ -96,7 +96,7 @@ app.post(`/reviews`, (req, res) => {
     })
 })
 
-app.put(`/reviews/:review_id/helpful`, (req, res) => {
+app.put(`/api/reviews/:review_id/helpful`, (req, res) => {
   let id = req.params.review_id
   console.log(id, "iddididididididiidi")
   axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${id}/helpful`, {}, {

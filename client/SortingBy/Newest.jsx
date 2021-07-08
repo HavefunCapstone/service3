@@ -25,7 +25,7 @@ const Newest = (props) => {
     const update = (review) => {
         console.log(review.review_id, "hheheheheheheheh")
         let help = review.helpfulness
-        axios.put(`/reviews/${review.review_id}/helpful`, { help: help++ })
+        axios.put(`/api/reviews/${review.review_id}/helpful`, { help: help++ })
             .then(result => {
                 console.log("front", result.data)
             })

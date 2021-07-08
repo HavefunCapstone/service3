@@ -49,7 +49,7 @@ function App() {
 
     useEffect(
         () => {
-            axios.get(`/reviews/${product_id}/${sort}`)
+            axios.get(`/api/reviews/${product_id}/${sort}`)
                 .then(result => {
                     setData(result.data)
                 })
