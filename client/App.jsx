@@ -55,7 +55,7 @@ function App() {
                 })
                 .catch(err =>
                     console.error(err))
-            axios.get(`/reviews/meta/${product_id}`)
+            axios.get(`/api/reviews/meta/${product_id}`)
                 .then(result => {
                     setCharacteristics(result.data)
                 })
