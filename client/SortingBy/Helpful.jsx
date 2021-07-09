@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
 import axios from "axios";
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import $ from "jquery";
+
 
 
 
@@ -30,7 +32,7 @@ const Helpful = (props) => {
             .catch(err =>
                 console.error(err))
     }
-
+    var element = document.getElementById("e");
     // className = "overflow-auto h-36"
     return (
         <>
@@ -68,10 +70,11 @@ const Helpful = (props) => {
                         <div className="flex gap-2 text-xs p-2">
                             <div className="font-medium "> helpful ?</div>
                             <div className="font-normal text-gray-500 " > ({review.helpfulness}) </div>
-                            <div onClick={() => {
+                            <div id="e" onClick={() => {
                                 console.log("test")
                                 update(review)
                                 setHelp(review.helpfulness += 1)
+                                $(element).html("Thank you for your feedback");
                             }}>Yes |</div>
                             <a>Report</a>
                         </div>
